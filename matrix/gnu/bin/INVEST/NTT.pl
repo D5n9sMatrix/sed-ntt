@@ -25,10 +25,6 @@ GetOptions(
     "debug"   => \$debug,
 ) or pod2usage(2);
 pod2usage(1) if defined $help;
-pod2usage(-exists($help)) if defined $man;
-pod2usage(-msgget("error", $debug), -exists($debug)) if defined $debug;
-pod2usage(-msgget("error", $verbose), -exists($verbose)) if defined $verbose;
-pod2usage(-msgget("error"), -exists($man)) if defined $man;
 
 
 =pod
